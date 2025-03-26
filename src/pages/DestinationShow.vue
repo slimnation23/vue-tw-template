@@ -1,9 +1,9 @@
 <template>
     <section class="destination">
-        <h1 class="text-2xl font-semibold mb-5">{{destination.name}}</h1>
+        <h1 class="text-2xl font-semibold mb-5">{{ destination.name }}</h1>
         <div class="destination-details">
-          <img :src="`/images/${destination.image}`" :alt="destination.name">
-          <p>{{destination.description}}</p>
+            <img :src="`/images/${destination.image}`" :alt="destination.name" />
+            <p>{{ destination.description }}</p>
         </div>
     </section>
 </template>
@@ -16,7 +16,9 @@ export default {
             return parseInt(this.$route.params.id);
         },
         destination() {
-            return sourceData.destinations.find(destination => destination.id === this.destinationId);
+            return sourceData.destinations.find(
+                (destination) => destination.id === this.destinationId
+            );
         },
     },
 };
